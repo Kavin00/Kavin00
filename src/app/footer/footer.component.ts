@@ -7,23 +7,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
+  naviagte: any =  [
+    {
+      title : "Home",
+      url   : "",
+      icon  : "home-outline"
+    },
+    {
+      title : "My Account",
+      url   : "/my_account",
+      icon  : "person-outline"
+    },
+    {
+      title : "Categories",
+      url   : "/category",
+      icon  : "menu-outline"
+    },
+    {
+      title : "My Orders",
+      url   : "/my_order",
+      icon  : "bicycle-outline"
+    },
+    {
+      title : "Cart",
+      url   : "/cart",
+      icon  : "cart-outline"
+    },
+  ]
+  constructor(private router: Router) { }
 
-  constructor(private router : Router) { }
-
-  ngOnInit() { }
-  home() {
-    this.router.navigate([''])
-  }
-  myAccount(){
-    this.router.navigate(['/my_account'])
-  }
-  category(){
-    this.router.navigate(['/category'])
-  }
-  my_order(){
-    this.router.navigate(['/my_order'])
-  }
-  cart(){
-    this.router.navigate(['/cart'])
-  }
+  ngOnInit() { console.log(this.naviagte  )}
 }
